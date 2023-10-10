@@ -15,66 +15,68 @@
 </head>
 
 <body>
-    <div class="d-flex justify-content-center   ">
+    <div class="d-flex justify-content-center" id="app">
         <div class="calculator card mt-5">
-            <input type="text" class="calculator-screen z-depth-1" value="" disabled />
+            <input type="text" class="calculator-screen z-depth-1" v-model="screen" value="0" disabled />
 
             <div class="calculator-keys">
-                <button type="button" class="operator btn btn-info" value="+">+</button>
-                <button type="button" class="operator btn btn-info" value="-">-</button>
-                <button type="button" class="operator btn btn-info" value="*">
+                <button type="button" class="operator btn btn-info" @click = "clickOperator('+')" value="+">+</button>
+                <button type="button" class="operator btn btn-info" @click = "clickOperator('-')" value="-">-</button>
+                <button type="button" class="operator btn btn-info" @click = "clickOperator('*')" value="*">
                     &times;
                 </button>
-                <button type="button" class="operator btn btn-info" value="/">
+                <button type="button" class="operator btn btn-info" @click = "clickOperator('/')" value="/">
                     &divide;
                 </button>
 
-                <button type="button" value="7" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(7)" value="7" class="btn btn-light waves-effect">
                     7
                 </button>
-                <button type="button" value="8" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(8)" value="8" class="btn btn-light waves-effect">
                     8
                 </button>
-                <button type="button" value="9" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(9)" value="9" class="btn btn-light waves-effect">
                     9
                 </button>
 
-                <button type="button" value="4" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(4)" value="4" class="btn btn-light waves-effect">
                     4
                 </button>
-                <button type="button" value="5" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(5)" value="5" class="btn btn-light waves-effect">
                     5
                 </button>
-                <button type="button" value="6" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(6)" value="6" class="btn btn-light waves-effect">
                     6
                 </button>
 
-                <button type="button" value="1" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(1)" value="1" class="btn btn-light waves-effect">
                     1
                 </button>
-                <button type="button" value="2" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(2)" value="2" class="btn btn-light waves-effect">
                     2
                 </button>
-                <button type="button" value="3" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(3)" value="3" class="btn btn-light waves-effect">
                     3
                 </button>
 
-                <button type="button" value="0" class="btn btn-light waves-effect">
+                <button type="button" @click = "clickMe(0)" value="0" class="btn btn-light waves-effect">
                     0
                 </button>
-                <button type="button" class="decimal function btn btn-secondary" value=".">
+                <button type="button" class="decimal function btn btn-secondary" @click = "clickMe('.')" value=".">
                     .
                 </button>
-                <button type="button" class="all-clear function btn btn-danger btn-sm" value="all-clear">
+                <button type="button" class="all-clear function btn btn-danger btn-sm" @click = "clear()" value="all-clear">
                     AC
                 </button>
 
-                <button type="button" class="equal-sign operator btn btn-default" value="=">
+                <button type="button" class="equal-sign operator btn btn-default" @click = "calculate()" value="=">
                     =
                 </button>
             </div>
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script src="./vue.js"></script>
 
 </html>
